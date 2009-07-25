@@ -8,12 +8,12 @@ Summary(es.UTF-8):	libusb - Biblioteca USB
 Summary(pl.UTF-8):	Dostęp z poziomu aplikacji do urządzeń USB
 Summary(pt_BR.UTF-8):	libusb - Biblioteca para acesso a devices USB
 Name:		libusb-compat
-Version:	0.1.0
+Version:	0.1.3
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libusb/%{name}-%{version}.tar.bz2
-# Source0-md5:	652e1d9e6c6912fd924a5ad204f6d48b
+# Source0-md5:	570ac2ea085b80d1f74ddc7c6a93c0eb
 URL:		http://libusb.sourceforge.net/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.7.6
