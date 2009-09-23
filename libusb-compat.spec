@@ -1,6 +1,5 @@
 #
 # Conditional build:
-%bcond_without	doc	# don't build documentation
 %bcond_with	tests	# perform "make check"
 #
 Summary:	Application access to USB devices
@@ -40,6 +39,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libusb
 Summary(pt_BR.UTF-8):	Arquivos de desenvolvimento da libusb
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	libusb-devel >= 1.0.0
 Obsoletes:	libusb0.1-devel
 
 %description devel
