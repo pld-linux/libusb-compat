@@ -2,18 +2,18 @@
 # Conditional build:
 %bcond_with	tests	# perform "make check"
 #
-Summary:	Application access to USB devices
+Summary:	Compatibility layer for libusb-0.1
 Summary(es.UTF-8):	libusb - Biblioteca USB
 Summary(pl.UTF-8):	Dostęp z poziomu aplikacji do urządzeń USB
 Summary(pt_BR.UTF-8):	libusb - Biblioteca para acesso a devices USB
 Name:		libusb-compat
 Version:	0.1.3
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libusb/%{name}-%{version}.tar.bz2
 # Source0-md5:	570ac2ea085b80d1f74ddc7c6a93c0eb
-URL:		http://libusb.sourceforge.net/
+URL:		http://www.libusb.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.7.6
 BuildRequires:	libtool >= 2:1.5
@@ -22,6 +22,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Provides a library for application access to USB devices.
+
+libusb-compat-0.1 is a replacement for libusb-0.1.
+
+It attempts to look, feel and behave identically. The difference is
+that it just converts the libusb-0.1 function calls into their
+libusb-1.0 equivalents.
 
 %description -l es.UTF-8
 Biblioteca de uso en devices USB.
@@ -44,7 +50,7 @@ Obsoletes:	libusb0.1-devel
 
 %description devel
 This package contains header files and other resources you can use to
-incorporate libusb into applications.
+incorporate libusb-0.1 into applications.
 
 %description devel -l es.UTF-8
 Bibliotecas de desarrolo para linusb.
@@ -65,7 +71,7 @@ Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
-This is package with static libusb libraries.
+This is package with static libusb-0.1 libraries.
 
 %description static -l es.UTF-8
 Bibliotecas de desarrolo para linusb - estatico.
@@ -107,6 +113,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS README NEWS ChangeLog
 %attr(755,root,root) %{_libdir}/libusb-*.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libusb-*.so.4
 
 %files devel
 %defattr(644,root,root,755)
