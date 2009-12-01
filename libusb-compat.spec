@@ -18,6 +18,7 @@ BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.7.6
 BuildRequires:	libtool >= 2:1.5
 BuildRequires:	libusb-devel >= 1.0.0
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
