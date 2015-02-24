@@ -6,7 +6,7 @@ Summary:	USB access library (libusb-1.0 to libusb-0.1 compatibility wrapper)
 Summary(pl.UTF-8):	Biblioteka dostępu do USB (warstwa kompatybilności libusb-1.0 z libusb-0.1)
 Name:		libusb-compat
 Version:	0.1.5
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/libusb/%{name}-%{version}.tar.bz2
