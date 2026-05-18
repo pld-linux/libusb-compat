@@ -9,7 +9,7 @@ Version:	0.1.9
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
-Source0:	http://downloads.sourceforge.net/libusb/%{name}-%{version}.tar.bz2
+Source0:	https://downloads.sourceforge.net/libusb/%{name}-%{version}.tar.bz2
 # Source0-md5:	27b644e410ad790cd699e79270ed463d
 URL:		http://www.libusb.org/
 BuildRequires:	autoconf >= 2.50
