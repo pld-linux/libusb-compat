@@ -1,6 +1,7 @@
 #
 # Conditional build:
-%bcond_with	tests	# perform "make check"
+%bcond_without	static_libs	# static library
+%bcond_with	tests		# perform "make check"
 #
 Summary:	USB access library (libusb-1.0 to libusb-0.1 compatibility wrapper)
 Summary(pl.UTF-8):	Biblioteka dostępu do USB (warstwa kompatybilności libusb-1.0 z libusb-0.1)
@@ -17,6 +18,7 @@ BuildRequires:	automake >= 1.6
 BuildRequires:	libtool >= 2:1.5
 BuildRequires:	libusb-devel >= 1.0.0
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.527
 Obsoletes:	libusb < 1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -92,7 +94,8 @@ Bibliotecas de desenvolvimento para libusb-compat - estático.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	%{__enable_disable static_libs static}
 
 %{__make}
 
@@ -124,6 +127,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/usb.h
 %{_pkgconfigdir}/libusb.pc
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libusb.a
+%endif
